@@ -35,7 +35,7 @@ namespace COMRegistration
 
             // Unregister local server
             string serverKey = string.Format(KeyFormat.LocalServer32, clsid);
-            Registry.LocalMachine.DeleteSubKey(serverKey, throwOnMissingSubKey: false);
+            Registry.LocalMachine.DeleteSubKeyTree(serverKey, throwOnMissingSubKey: false);
 
             // Unregister type library
             TypeLib.Unregister(tlbPath);
